@@ -1,5 +1,11 @@
 {
   "name": "simple-site",
   "version": "0.0.0",
-  "description": "Example Site for JS FII Workshop"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mel-quark/simple-site"
+  },
+  "description": "Example Site for JS FII Workshop",
+  "dependencies": {},
+  "devDependencies": {}
 }
