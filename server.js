@@ -1,4 +1,5 @@
 var express = require("express"),
+  http = require("http"),
   app = express();
 
 var quotes = [
@@ -16,8 +17,8 @@ app.get("/joke", function (req, res){
 });
 
 app.get("/", function (req, res){
-  res.sendfile('./hello.html');
+  res.sendFile(__dirname + '/hello.html');
 });
 
 console.log("server starting. available at http://localhost:3000");
-app.listen(3000);
+http.createServer(app).listen(3000);
