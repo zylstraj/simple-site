@@ -5,13 +5,18 @@
   <button id="joke">Click for a Funny</button>
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script>
-    $("button").click(function (){
-      var url = "./inspiration";
-      if ($(this).attr("id") === "joke") {
-        url = "./joke";
-      }
-      $.get(url, function (response) {
-        $("#ajax-text").text(response);
+    $(function () {
+      $("button").click(function (){
+        var url = "./inspiration";
+        if ($(this).attr("id") === "joke") {
+          url = "./joke";
+        }
+        $.get(url, function (response) {
+          var resText = typeof response === "object"? 
+            response.setup + ": " + response.punchline : 
+            response;
+          $("#ajax-text").text(resText);
+        });
       });
     });
   </script>
