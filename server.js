@@ -21,4 +21,4 @@ app.get("/", function (req, res){
 });
 
 console.log("server starting. available at http://localhost:3000");
-http.createServer(app).listen(3000);
+http.createServer(app).listen(process.env.PORT || 3000);
