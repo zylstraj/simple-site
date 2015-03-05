@@ -1,35 +1,42 @@
-var express = require("express"),
-  http = require("http"),
-  app = express();
+var express = require("express");
+var app = express();
+var port = process.env.PORT || 3000;
+
+app.use(express.static(__dirname + "/app/"));
 
 var quotes = [
-  "The answer to life the universe and everything is 42.",
-  "I must not fear. Fear is the mind-killer. Fear is the little-death...",
-  "Life can be so sweet on the sunny side of the street"
+  "I have not failed. I've just found 10,000 ways that won't work. - Thomas Edison",
+  "No matter where you go, there you are.",
+  "If it is a good idea, go ahead and do it. It is much easier to apologize than to get permission. - Rear Admiral Grace Hopper, USN, Ph.D"
 ];
 
 var jokes = [
-  { setup: "What did the Zen buddhist say to the hotdog vendor?", 
-    punchline: "Make me one with everything."},
-  { setup: "What did the mushroom say when asked what she looked for in a date?",
-    punchline: "A fun guy."},
-  { setup: "How many tickles does it take to make an octupus laugh?",
-    punchline: "Ten Tickles"}
+  { setup: "What's the difference between a guitar and a fish?",
+    punchline: "You can't tuna fish." },
+  { setup: "What do you get when you cross a cow and a duck?",
+    punchline: "Milk and quackers." },
+  { setup: "How many tickles does it take to make an octopus laugh?",
+    punchline: "Ten Tickles" }
 ];
 
-app.get("/joke", function (req, res){
-  var randomIndex = Math.floor(Math.random()*jokes.length);
+app.get("/joke", function(req, res) {
+  var randomIndex = Math.floor(Math.random() * jokes.length);
   res.json(jokes[randomIndex]);
 });
 
-app.get("/inspiration", function (req, res){
-  var randomIndex = Math.floor(Math.random()*quotes.length);
+app.get("/quote", function(req, res) {
+  var randomIndex = Math.floor(Math.random() * quotes.length);
   res.send(quotes[randomIndex]);
 });
 
-app.get("/", function (req, res){
-  res.sendFile(__dirname + '/hello.html');
+app.get("/", function(req, res) {
+  res.sendFile("index.html");
 });
 
-console.log("server starting. available at http://localhost:3000");
-http.createServer(app).listen(process.env.PORT || 3000);
+app.listen(port, function() {
+  console.log("server starting. available at http://localhost:" + port);
+});
+
+// app.get("/", function(req, res) {
+//   res.send("hello, universe");
+// });

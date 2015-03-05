@@ -1,1 +1,1 @@
-second workshop for foundations ii, javascript. winter 2014
+Simple server workshop for Foundations II, JavaScript
