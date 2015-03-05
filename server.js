@@ -2,6 +2,13 @@ var express = require("express");
 var app = express();
 var port = process.env.PORT || 3000;
 var information	 = ["Do Better", "Try Harder", "You Got It", "Dont Stop Yet", "Awesome"];
+
+app.use(express.static(__dirname + "/app/"));
+
+app.get("/", function(req, res){
+	res.sendFile("index.html");
+});
+
 function randomString(words) {
 
 return words[Math.floor(Math.random() * words.length)];
