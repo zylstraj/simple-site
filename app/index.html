@@ -1,9 +1,9 @@
 <!document html>
 <html lang = "en">
-<head>
+<!--<head>
 	<meta charset = "utf-8">
 	<title>Make This Work</title>
-	<!--<style>
+	<style>
 	button {
 		height: 50px;
 		width: 100px;
@@ -18,17 +18,30 @@
 		text-align: center;
 		margin-top: 20%;
 	}
-	</style> -->
-
+	</style>
+	
 	<script src = "https://code.jquery.com/jquery-1.10.2.js"
 	</script>
 	<script src = "ProduceAString.js"></script>
-	<script
-</head>
+	<script -->
 <body>
-	<div>
-	<button id ="produce">Produce a String</button>
-	</div>
+	<button id = "quote"> Get a Quote </button>
+	<p id = "ajax-text"></p>
+
+	<p>Piglatinify your name now!</p>
+	<form id="piglatin">
+		<label>First Name</label><input type="text"
+		name="firstname">
+		<label>Last Name</label><input type="text"
+		name="lastname">
+		<input type="submit" value="Piglatinify It"/>
+	</form>
+	<p>Your name in Pig Latin is:</p>
+	<p id = "piglatinified"></p>
+
+<script src = "https://code.jquery.com/jquery-1.11.2.min.js">
+	</script>
+	<script src = "script.js"></script>
 
 </body>
 </html>
