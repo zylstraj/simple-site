@@ -2,16 +2,19 @@
 	
 	function randomString() {
 
-var information = ["Do Better", "Try Harder", "You Got It", "Dont Stop Yet", "Awesome"];
+var information = ["Do Better", "Try Harder", "You Got It", "Dont Stop Yet", "Awesome"];*/
+
+var information	 = ["Do Better", "Try Harder", "You Got It", "Dont Stop Yet", "Awesome"];
+
+function randomString() {
 
 return information[Math.floor(Math.random() * information.length)];
 }
 
-	$('button').on('click', randomString());
+/*	$('button').on('click', randomString());
 })
 
-var information	 = ["Do Better", "Try Harder", "You Got It", "Dont Stop Yet", "Awesome"];
-function randomString(words) {
+var randomIndex = Math.floor(Math.random()*information.length);function randomString(words) {
 
 return words[Math.floor(Math.random() * words.length)];
 }
@@ -31,22 +34,38 @@ return words[Math.floor(Math.random() * words.length)];
 	});
 });*/
 
-$(function() {
+/*$(function() {
 $("button").click(function() {
-$.get("http://localhost:3000/stadium", function(response) { 
+var url = $(this)attr("id");
+
+$.get(url, function(response) { 
 	var resText; 
 	if (typeof response === "object") {
-		resText = response[0].favoritestadium + ": " + response[0].reasoning;
+		resText = response.favoritestadium + ": " + response.reasoning;
 	} else {
 		resText = response;
 	}
 	console.log(response);
-	$("#ajax-text").text(response);
+	$("#ajax-text").text(response.favoritestadium + ": " + response.reasoning);
 	}); 
 	});
+});*/
+/*$(function() {
+	$('button').click(function(){
+		$.get("http://localhost:3000/stadium", function(response){
+		$("#ajax-text").text(response.favoritestadium + ": " + response.reasoning);
+	});
 });
+});*/
 
-$("#piglatin").on("submit", function(e) {
+/*$(function(){
+		$("button").click(function(){
+			$.get("http://localhost:3000/quote", function(response){
+				$("ajax-text").text(response);
+			});
+		});
+});*/
+/*$("#piglatin").on("submit", function(e) {
 	e.preventDefault();
 	var firstname = $('input[name=firstname]').val();
 	var lastname = $('input[name=lastname]').val();
@@ -57,5 +76,5 @@ $("#piglatin").on("submit", function(e) {
 var piglatinified = response.firstname + " " +
 response.lastname; $("#piglatinified").text(piglatinified);
 });
-})
+})*/
 
