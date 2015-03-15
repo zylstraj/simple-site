@@ -13,10 +13,10 @@ app.use(bodyparser.urlencoded({extended: true}));*/
 //app.use(express.static(__dirname + "/app/"));
 
 /*var information	 = ["Do Better", "Try Harder", "You Got It", "Dont Stop Yet", "Awesome"];
-
+*/
 app.use(express.static(__dirname + "/app/"));
 
-app.get("/", function(req, res){
+/*app.get("/", function(req, res){
 	res.sendFile("index.html");
 });
 
@@ -40,7 +40,7 @@ punchline: "Because she had mittens on."}
 ];
 
 app.get("/", function(req, res){
-	res.send("hello universe");
+	res.sendFile("index.html");
 });
 
 app.get("/quote", function(req, res){
